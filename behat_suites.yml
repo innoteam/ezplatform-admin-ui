@@ -5,11 +5,19 @@ default:
         Behat\MinkExtension:
             files_path: '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/src/lib/Behat/TestFiles/'
 
-adminui:
     suites:
         adminui:
             paths:
-                - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/SystemInfo.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Sections.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Roles.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ObjectStates.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Languages.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeGroup.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentType.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Authentication.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentCreation.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFields.feature'
             filters:
                 tags: "@common"
             contexts:
@@ -35,10 +43,8 @@ adminui:
                 - EzSystems\EzPlatformAdminUi\Behat\BusinessContext\DashboardContext
                 - EzSystems\RepositoryForms\Behat\Context\ContentTypeContext
                 - EzSystems\RepositoryForms\Behat\Context\FieldTypeFormContext
-                
-adminuimodules:
-    suites:
-        default:
+
+        adminuimodules:
             paths:
                 - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features'
             filters:
