@@ -8,16 +8,7 @@ default:
     suites:
         adminui:
             paths:
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Authentication.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/SystemInfo.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Sections.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Roles.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ObjectStates.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/Languages.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeGroup.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentType.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentCreation.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFields.feature'
+              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features'
             filters:
                 tags: "@common"
             contexts:
