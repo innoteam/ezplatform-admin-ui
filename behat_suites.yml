@@ -9,12 +9,6 @@ default:
         adminui:
             paths:
               - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsFile.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsLists.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsNumeric.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsObjects.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsOther.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsText.feature'
-              - '%paths.base%/vendor/ezsystems/ezplatform-admin-ui/features/ContentTypeFieldsTime.feature'
             filters:
                 tags: "@common"
             contexts:
