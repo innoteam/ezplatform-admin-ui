@@ -39,7 +39,7 @@ Feature: Content items creation
     And I go to "mobile" view in "Test Article" preview
     And I go to "desktop" view in "Test Article" preview
     And I go back from content "Test Article" preview
-    Then I should be on "Content Update" "Test Article2" page
+    Then I should be on "Content Update" "Test Article" page
     And content fields are set
       | label | value        |
       | Title | Test Article |
@@ -61,21 +61,6 @@ Feature: Content items creation
     And article main content field equals "Test article intro"
 
   @javascript @common
-  Scenario: Content can be previewed during edition
-    Given I navigate to content "Test Article" of type "Article" in root path
-    When I click on the edit action bar button "Edit"
-    And I click on the edit action bar button "Preview"
-    And I go to "tablet" view in "Test Article" preview
-    And I go to "mobile" view in "Test Article" preview
-    And I go to "desktop" view in "Test Article" preview
-    And I go back from content "Test Article" preview
-    Then I should be on "Content Update" "Test Article edited3" page
-    And content fields are set
-      | label | value        |
-      | Title | Test Article |
-    And article main content field is set to "Test article intro"
-
-  @javascript @common
   Scenario: Content can be edited
     Given I navigate to content "Test Article" of type "Article" in root path
     When I click on the edit action bar button "Edit"
@@ -90,6 +75,21 @@ Feature: Content items creation
       | label | value               |
       | Title | Test Article edited |
     And article main content field equals "Test article intro edited"
+
+  @javascript @common
+  Scenario: Content can be previewed during edition
+    Given I navigate to content "Test Article edited" of type "Article" in root path
+    When I click on the edit action bar button "Edit"
+    And I click on the edit action bar button "Preview"
+    And I go to "tablet" view in "Test Article edited" preview
+    And I go to "mobile" view in "Test Article edited" preview
+    And I go to "desktop" view in "Test Article edited" preview
+    And I go back from content "Test Article edited" preview
+    Then I should be on "Content Update" "Test Article edited" page
+    And content fields are set
+      | label | value               |
+      | Title | Test Article edited |
+    And article main content field is set to "Test article intro edited"
 
   @javascript @common
   Scenario: Content moving can be cancelled
