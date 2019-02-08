@@ -4,6 +4,7 @@
 {% set is_archived = is_archived is defined and is_archived %}
 {% set is_draft_conflict = is_draft_conflict is defined and is_draft_conflict %}
 
+<div class="ez-scrollable-table-wrapper">
 <table class="table {% if is_draft and haveToPaginate %} mb-3 {% endif %} {% if is_draft_conflict %} ez-table__draft-conflict {% endif %}">
     <thead>
     <tr>
@@ -69,9 +70,9 @@
                 <td class="ez-table__cell ez-table__cell--has-action-btns text-right">
                     {% set edit_draft_disabled = version.author.id != admin_ui_config.user.user.id %}
                     <a href="{{ edit_url }}"
-                       class="btn btn-icon {% if edit_draft_disabled %}ez-btn--prevented{% endif %}"
-                       title="{{ 'tab.versions.table.action.draft.edit'|trans|desc('Edit Draft') }}"
-                       {% if edit_draft_disabled %}disabled{% endif %}>
+                        class="btn btn-icon {% if edit_draft_disabled %}ez-btn--prevented{% endif %}"
+                        title="{{ 'tab.versions.table.action.draft.edit'|trans|desc('Edit Draft') }}"
+                        {% if edit_draft_disabled %}disabled{% endif %}>
                         <svg class="ez-icon ez-icon-edit">
                             <use xlink:href="{{ asset('bundles/ezplatformadminui/img/ez-icons.svg') }}#edit"></use>
                         </svg>
@@ -111,3 +112,4 @@
     {% endfor %}
     </tbody>
 </table>
+</div>

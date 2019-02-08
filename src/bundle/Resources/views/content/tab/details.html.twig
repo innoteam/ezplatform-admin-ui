@@ -4,6 +4,7 @@
 
 {% form_theme form_location_update '@ezdesign/form_fields.html.twig' %}
 
+<div class="ez-scrollable-table-wrapper">
 <table class="table">
     <thead>
     <tr>
@@ -40,30 +41,35 @@
     </tr>
     </tbody>
 </table>
+</div>
 
 {% include '@ezdesign/parts/table_header.html.twig' with { headerText: 'tab.details.technical_details'|trans()|desc('Technical details') } %}
 
+<div class="ez-scrollable-table-wrapper">
 <table class="table">
     <thead>
     <tr>
         <th>{{ 'tab.details.content_id'|trans()|desc('Content ID') }}</th>
         <th>{{ 'tab.details.location_id'|trans()|desc('Location ID') }}</th>
-        <th>{{ 'tab.details.content_remote_id'|trans()|desc('Content remote ID') }}</th>
-        <th>{{ 'tab.details.location_remote_id'|trans()|desc('Location remote ID') }}</th>
+        <th class="optional">{{ 'tab.details.content_remote_id'|trans()|desc('Content remote ID') }}</th>
+        <th class="optional">{{ 'tab.details.location_remote_id'|trans()|desc('Location remote ID') }}</th>
     </tr>
     </thead>
     <tbody>
     <tr>
         <td>{{ contentInfo.id }}</td>
         <td>{{ location.id }}</td>
-        <td>{{ contentInfo.remoteId }}</td>
-        <td>{{ location.remoteId }}</td>
+        <td class="optional">{{ contentInfo.remoteId }}</td>
+        <td class="optional">{{ location.remoteId }}</td>
     </tr>
     </tbody>
 </table>
+</div>
+
 {% if can_see_section %}
     {% include '@ezdesign/parts/table_header.html.twig' with { headerText: 'tab.details.section_details'|trans()|desc('Section details') } %}
 
+    <div class="ez-scrollable-table-wrapper">
     <table class="table">
         <thead>
         <tr>
@@ -96,10 +102,12 @@
         </tr>
         </tbody>
     </table>
+    </div>
 {% endif %}
 
 {% include '@ezdesign/parts/table_header.html.twig' with { headerText: 'tab.details.state_details'|trans()|desc('State details') } %}
 
+<div class="ez-scrollable-table-wrapper">
 <table class="table">
     <thead>
     <tr>
@@ -135,6 +143,7 @@
     {% endfor %}
     </tbody>
 </table>
+</div>
 
 {% include '@ezdesign/parts/table_header.html.twig' with {
     headerText: 'tab.details.sub_items_sorting_order'|trans|desc('Sub-items sorting order'),

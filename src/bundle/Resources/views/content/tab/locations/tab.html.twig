@@ -13,6 +13,7 @@
         'action': path('ezplatform.location.remove'),
         'attr': { 'class': 'ez-toggle-btn-state', 'data-toggle-button-id': '#delete-locations' }
     }) }}
+    <div class="ez-scrollable-table-wrapper">
     <table class="ez-table table">
         <thead>
         <tr>
@@ -70,6 +71,7 @@
         {% endif %}
         </tbody>
     </table>
+    </div>
     {{ form_end(form_content_location_remove) }}
 
     {{ form(form_content_location_update_visibility, {'action': path('ezplatform.location.update_visibility')})}}
